@@ -1,0 +1,218 @@
+/* ============================================================
+   MY SITE — ANIMATIONS
+   Scroll reveal, keyframes, hover effects
+   ============================================================ */
+
+/* ---------- 1. SCROLL REVEAL ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay */
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+.reveal:nth-child(4) { transition-delay: 0.3s; }
+.reveal:nth-child(5) { transition-delay: 0.4s; }
+.reveal:nth-child(6) { transition-delay: 0.5s; }
+
+/* ---------- 2. REVEAL VARIANTS ---------- */
+.reveal--left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.reveal--left.visible { opacity: 1; transform: translateX(0); }
+
+.reveal--right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.reveal--right.visible { opacity: 1; transform: translateX(0); }
+
+.reveal--scale {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.reveal--scale.visible { opacity: 1; transform: scale(1); }
+
+/* ---------- 3. HERO ENTRANCE ---------- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero__content > * {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+}
+
+.hero__content > *:nth-child(1) { animation-delay: 0.1s; }
+.hero__content > *:nth-child(2) { animation-delay: 0.2s; }
+.hero__content > *:nth-child(3) { animation-delay: 0.3s; }
+.hero__content > *:nth-child(4) { animation-delay: 0.4s; }
+.hero__content > *:nth-child(5) { animation-delay: 0.5s; }
+.hero__content > *:nth-child(6) { animation-delay: 0.6s; }
+
+.hero__visual {
+  animation: fadeIn 1.2s ease 0.4s backwards;
+}
+
+/* ---------- 4. FLOAT ---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+.float { animation: float 5s ease-in-out infinite; }
+
+/* ---------- 5. PULSE ---------- */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.06); opacity: 0.85; }
+}
+
+.pulse { animation: pulse 2.5s ease-in-out infinite; }
+
+/* ---------- 6. SHAKE (form error) ---------- */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+.shake { animation: shake 0.4s ease; }
+
+/* ---------- 7. SPIN ---------- */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spin { animation: spin 1s linear infinite; }
+
+/* ---------- 8. FADE IN ---------- */
+@keyframes fadeInSimple {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in { animation: fadeInSimple 0.6s ease; }
+
+/* ---------- 9. SLIDE UP ---------- */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up { animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+
+/* ---------- 10. GRADIENT BORDER GLOW ---------- */
+@keyframes borderGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.6); }
+}
+
+.glow { animation: borderGlow 3s ease-in-out infinite; }
+
+/* ---------- 11. HOVER LIFT ---------- */
+.hover-lift {
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ---------- 12. LINK UNDERLINE ---------- */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: var(--gradient);
+  transition: width var(--transition);
+}
+
+.link-underline:hover::after { width: 100%; }
+
+/* ---------- 13. PAGE TRANSITION ---------- */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main { animation: pageFadeIn 0.5s ease; }
+
+/* ---------- 14. PROGRESS BAR FILL ANIMATION ---------- */
+@keyframes fillBar {
+  from { width: 0; }
+}
+
+/* ---------- 15. LOADER FADE OUT ---------- */
+@keyframes loaderFade {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* ---------- 16. DECORATIVE ORB ---------- */
+@keyframes orbFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.1);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translate(-20px, 30px) scale(0.95);
+    opacity: 0.4;
+  }
+}
+
+/* ---------- 17. REDUCED MOTION OVERRIDE ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal--left,
+  .reveal--right,
+  .reveal--scale {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero__content > *,
+  .hero__visual,
+  main {
+    animation: none !important;
+  }
+
+  .float,
+  .pulse,
+  .glow,
+  .hero__glow,
+  .hero__floating,
+  .hero__profile-ring {
+    animation: none !important;
+  }
+}

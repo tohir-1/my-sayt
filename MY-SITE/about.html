@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tohir Tarilov haqida — Frontend Dasturchi</title>
+  <meta name="description" content="Tohir Tarilov — Frontend Dasturchi haqida batafsil ma'lumot: biografiya, tajriba, ko'nikmalar va qadriyatlar." />
+  <meta name="author" content="Tohir Tarilov" />
+  
+  <!-- Siz so'ragan Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzhCNUNGNiIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzQjgyRjYiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyNCIgZmlsbD0idXJsKCNiZ0dyYWQpIiAvPjxwYXRoIGQ9Ik0gMzAgMzUgTCAxNSA1MCBMIDMwIDY1IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiAvPjxwYXRoIGQ9Ik0gNzAgMzUgTCA4NSA1MCBMIDcwIDY1IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiAvPjxwYXRoIGQ9Ik0gMzUgNDAgTCA2NSA0MCBMIDY1IDQ4IEwgNTUgNDggTCA1NSA3MiBMIDQ1IDcyIEwgNDUgNDggTCAzNSA0OCBaIiBmaWxsPSIjRkZGRkZGIiAvPjwvc3ZnPg==" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Tashqi CSS fayllar -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <div class="loader" id="loader"><div class="loader__content"><div class="loader__logo">TT<span>.DEV</span></div><div class="loader__bar"><span></span></div></div></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo"><span class="logo__mark">T</span><span class="logo__text">TOHIR<span>.DEV</span></span></a>
+      <nav class="nav" id="nav" aria-label="Asosiy navigatsiya">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Bosh sahifa</a></li>
+          <li><a href="about.html" class="nav__link active">Men haqimda</a></li>
+          <li><a href="projects.html" class="nav__link">Loyihalar</a></li>
+          <li><a href="contact.html" class="nav__link">Aloqa</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Rejimni almashtirish">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn--primary btn--sm header__hire">Ishga olish</a>
+        <button class="hamburger" id="hamburger" aria-label="Menyuni ochish" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul class="mobile-menu__list">
+      <li><a href="index.html" class="mobile-menu__link">Bosh sahifa</a></li>
+      <li><a href="about.html" class="mobile-menu__link">Men haqimda</a></li>
+      <li><a href="projects.html" class="mobile-menu__link">Loyihalar</a></li>
+      <li><a href="contact.html" class="mobile-menu__link">Aloqa</a></li>
+      <li><a href="contact.html" class="btn btn--primary mobile-menu__cta">Ishga olish</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero__inner">
+        <div class="page-hero__text reveal">
+          <span class="section__eyebrow">Tanishuv</span>
+          <h1 class="page-hero__title">Men <span class="gradient-text">haqimda</span></h1>
+          <p class="page-hero__desc">
+            Men — Tohir Tarilov, zamonaviy web texnologiyalari bilan ishlaydigan, foydalanuvchi
+            tajribasini birinchi o'ringa qo'yadigan Frontend Dasturchi.
+          </p>
+        </div>
+        <div class="page-hero__visual reveal">
+          <div class="hero__profile-wrap">
+            <div class="hero__profile-ring"></div>
+            <div class="hero__profile">
+              <img src="assets/images/profile.jpg" alt="Tohir Tarilov profil rasmi" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Biografiya</span>
+          <h2 class="section__title">Men haqimda</h2>
+        </div>
+
+        <div class="bio-grid">
+          <div class="bio-info reveal">
+            <ul class="bio-info__list">
+              <li><span>Ism:</span><strong>Tohir Tarilov</strong></li>
+              <li><span>Kasb:</span><strong>Frontend Dasturchi</strong></li>
+              <li><span>Joylashuv:</span><strong>G'uzor, Qashqadaryo</strong></li>
+              <li><span>Email:</span><strong>tarilovtohir@gmail.com</strong></li>
+            </ul>
+          </div>
+          <div class="bio-story reveal">
+            <p>
+              Men Tohir Tarilov — dasturlashni 2 yil avval boshlaganman. HTML va CSS orqali
+              birinchi sahifalarimni yaratgach, JavaScript bilan interaktivlik qo'shishni o'rgandim.
+              Hozirda zamonaviy frontend texnologiyalari bilan murakkab interfeyslar yarataman.
+            </p>
+            <p>
+              Har bir loyihada toza kod, semantik HTML va foydalanuvchi uchun qulay interfeysga
+              alohida e'tibor beraman. Dizayn va dasturlash uyg'unligi — mening ish uslubim.
+              Yangi texnologiyalarni o'rganish va doimiy rivojlanish — mening asosiy maqsadim.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section journey">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Yo'lim</span>
+          <h2 class="section__title">Mening yo'lim</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">Boshlanish</span>
+              <h3>Dasturlashga qiziqish</h3>
+              <p>Web-saytlar qanday ishlashini o'rganishdan boshlandi.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">1-bosqich</span>
+              <h3>HTML o'rganish</h3>
+              <p>Semantik HTML va sahifa strukturasi asoslarini o'zlashtirdim.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">2-bosqich</span>
+              <h3>CSS o'rganish</h3>
+              <p>Flexbox, Grid, responsive dizayn va animatsiyalar.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">3-bosqich</span>
+              <h3>JavaScript o'rganish</h3>
+              <p>DOM, eventlar, fetch va zamonaviy ES6+ sintaksisi.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">Hozir</span>
+              <h3>Birinchi loyihalar</h3>
+              <p>Portfolio, ta'lim platformasi va web-app loyihalari.</p>
+            </div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__year">Kelajak</span>
+              <h3>Maqsadlar</h3>
+              <p>React, TypeScript va professional jamoada ishlash.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section skills-section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Ko'nikmalar</span>
+          <h2 class="section__title">Mening ko'nikmalarim</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-bar reveal" data-percent="90">
+            <div class="skill-bar__head"><span>HTML</span><span class="skill-bar__percent">0%</span></div>
+            <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-percent="85">
+            <div class="skill-bar__head"><span>CSS</span><span class="skill-bar__percent">0%</span></div>
+            <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-percent="75">
+            <div class="skill-bar__head"><span>JavaScript</span><span class="skill-bar__percent">0%</span></div>
+            <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-percent="85">
+            <div class="skill-bar__head"><span>Responsive Dizayn</span><span class="skill-bar__percent">0%</span></div>
+            <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+          </div>
+          <div class="skill-bar reveal" data-percent="65">
+            <div class="skill-bar__head"><span>Git & GitHub</span><span class="skill-bar__percent">0%</span></div>
+            <div class="skill-bar__track"><div class="skill-bar__fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Qadriyatlar</span>
+          <h2 class="section__title">Mening qadriyatlarim</h2>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card reveal"><div class="value-card__icon">🎨</div><h3>Ijodkorlik</h3><p>Har bir loyihaga original yondashuv.</p></div>
+          <div class="value-card reveal"><div class="value-card__icon">✅</div><h3>Mas'uliyat</h3><p>Ishni vaqtida va sifatli topshirish.</p></div>
+          <div class="value-card reveal"><div class="value-card__icon">📚</div><h3>Doimiy o'rganish</h3><p>Yangi texnologiyalarni o'zlashtirish.</p></div>
+          <div class="value-card reveal"><div class="value-card__icon">💻</div><h3>Toza kod</h3><p>O'qilishi oson va tartibli kod.</p></div>
+          <div class="value-card reveal"><div class="value-card__icon">🧩</div><h3>Muammo yechish</h3><p>Murakkab masalalarni yechish.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__eyebrow">Kelajak</span>
+          <h2 class="section__title">Mening maqsadlarim</h2>
+        </div>
+        <div class="goals-list reveal">
+          <div class="goal-item"><span class="goal-item__num">01</span><p>Professional jamoada ishlash tajribasini oshirish.</p></div>
+          <div class="goal-item"><span class="goal-item__num">02</span><p>React va TypeScript'ni chuqur o'zlashtirish.</p></div>
+          <div class="goal-item"><span class="goal-item__num">03</span><p>Xalqaro loyihalarda qatnashish.</p></div>
+          <div class="goal-item"><span class="goal-item__num">04</span><p>O'z bilimlarimni boshqalarga ulashish.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-box reveal">
+          <h2>Birgalikda ajoyib loyiha yaratamiz!</h2>
+          <p>G'oyangiz bormi? Men bilan bog'laning.</p>
+          <a href="contact.html" class="btn btn--primary btn--lg">Bog'lanish</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo"><span class="logo__mark">T</span><span class="logo__text">TOHIR<span>.DEV</span></span></a>
+        <p class="footer__bio">Tohir Tarilov — zamonaviy va tezkor web-saytlar yaratuvchi Frontend Dasturchi.</p>
+        <div class="footer__socials">
+          <a href="https://github.com" target="_blank" rel="noopener" class="social-btn">GH</a>
+          <a href="https://t.me" target="_blank" rel="noopener" class="social-btn">TG</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn">IG</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navigatsiya</h4>
+        <ul><li><a href="index.html">Bosh sahifa</a></li><li><a href="about.html">Men haqimda</a></li><li><a href="projects.html">Loyihalar</a></li><li><a href="contact.html">Aloqa</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Bog'lanish</h4>
+        <ul><li><a href="mailto:tarilovtohir@gmail.com">tarilovtohir@gmail.com</a></li><li><a href="https://t.me" target="_blank" rel="noopener">Telegram</a></li><li><span>G'uzor, Qashqadaryo</span></li></ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Tohir Tarilov. Barcha huquqlar himoyalangan.</p>
+      <button class="back-to-top" id="backToTop" aria-label="Yuqoriga"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></button>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loyihalar — Tohir Tarilov</title>
+  <meta name="description" content="Tohir Tarilov tomonidan yaratilgan loyihalar galereyasi: web-app, UI dizayn va boshqalar." />
+  <meta name="author" content="Tohir Tarilov" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzhCNUNGNiIgLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzQjgyRjYiIC8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyNCIgZmlsbD0idXJsKCNiZ0dyYWQpIiAvPjxwYXRoIGQ9Ik0gMzAgMzUgTCAxNSA1MCBMIDMwIDY1IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiAvPjxwYXRoIGQ9Ik0gNzAgMzUgTCA4NSA1MCBMIDcwIDY1IiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iOCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiAvPjxwYXRoIGQ9Ik0gMzUgNDAgTCA2NSA0MCBMIDY1IDQ4IEwgNTUgNDggTCA1NSA3MiBMIDQ1IDcyIEwgNDUgNDggTCAzNSA0OCBaIiBmaWxsPSIjRkZGRkZGIiAvPjwvc3ZnPg==" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <div class="loader" id="loader"><div class="loader__content"><div class="loader__logo">TT<span>.DEV</span></div><div class="loader__bar"><span></span></div></div></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo"><span class="logo__mark">T</span><span class="logo__text">TOHIR<span>.DEV</span></span></a>
+      <nav class="nav" id="nav" aria-label="Asosiy navigatsiya">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Bosh sahifa</a></li>
+          <li><a href="about.html" class="nav__link">Men haqimda</a></li>
+          <li><a href="projects.html" class="nav__link active">Loyihalar</a></li>
+          <li><a href="contact.html" class="nav__link">Aloqa</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Rejimni almashtirish">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="contact.html" class="btn btn--primary btn--sm header__hire">Ishga olish</a>
+        <button class="hamburger" id="hamburger" aria-label="Menyuni ochish" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul class="mobile-menu__list">
+      <li><a href="index.html" class="mobile-menu__link">Bosh sahifa</a></li>
+      <li><a href="about.html" class="mobile-menu__link">Men haqimda</a></li>
+      <li><a href="projects.html" class="mobile-menu__link">Loyihalar</a></li>
+      <li><a href="contact.html" class="mobile-menu__link">Aloqa</a></li>
+      <li><a href="contact.html" class="btn btn--primary mobile-menu__cta">Ishga olish</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <section class="page-hero page-hero--center">
+      <div class="container">
+        <div class="page-hero__text reveal">
+          <span class="section__eyebrow">Portfolio</span>
+          <h1 class="page-hero__title">Mening <span class="gradient-text">loyihalarim</span></h1>
+          <p class="page-hero__desc">
+            HTML/CSS, JavaScript, web-app va UI dizayn yo'nalishlarida bajarilgan ishlar.
+          </p>
+          <p class="projects__count"><strong id="projectsCount">9</strong> ta loyiha</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="projects-toolbar reveal">
+          <div class="filter-tabs" id="filterTabs" role="tablist">
+            <button class="filter-tab active" data-filter="all">Barchasi</button>
+            <button class="filter-tab" data-filter="htmlcss">HTML/CSS</button>
+            <button class="filter-tab" data-filter="javascript">JavaScript</button>
+            <button class="filter-tab" data-filter="webapp">Web Ilovalar</button>
+            <button class="filter-tab" data-filter="ui">UI Dizayn</button>
+          </div>
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="projectSearch" placeholder="Loyihalarni qidirish..." aria-label="Loyihalarni qidirish" />
+          </div>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid"></div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <div class="empty-state__icon">🔍</div>
+          <h3>Hech narsa topilmadi</h3>
+          <p>Boshqa kalit so'z yoki kategoriyani sinab ko'ring.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__content">
+      <button class="modal__close" data-close-modal aria-label="Yopish">&times;</button>
+      <div class="modal__img"><img src="" alt="" id="modalImg" /></div>
+      <div class="modal__body">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDesc"></p>
+        <div class="project-card__tags" id="modalTags"></div>
+        <div class="modal__links">
+          <a href="#" class="btn btn--primary" id="modalDemo" target="_blank" rel="noopener">Ko'rish</a>
+          <a href="#" class="btn btn--outline" id="modalGithub" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo"><span class="logo__mark">T</span><span class="logo__text">TOHIR<span>.DEV</span></span></a>
+        <p class="footer__bio">Tohir Tarilov — zamonaviy va tezkor web-saytlar yaratuvchi Frontend Dasturchi.</p>
+        <div class="footer__socials">
+          <a href="https://github.com" target="_blank" rel="noopener" class="social-btn">GH</a>
+          <a href="https://t.me" target="_blank" rel="noopener" class="social-btn">TG</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="social-btn">IG</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Navigatsiya</h4>
+        <ul><li><a href="index.html">Bosh sahifa</a></li><li><a href="about.html">Men haqimda</a></li><li><a href="projects.html">Loyihalar</a></li><li><a href="contact.html">Aloqa</a></li></ul>
+      </div>
+      <div class="footer__col">
+        <h4>Bog'lanish</h4>
+        <ul><li><a href="mailto:tarilovtohir@gmail.com">tarilovtohir@gmail.com</a></li><li><a href="https://t.me" target="_blank" rel="noopener">Telegram</a></li><li><span>G'uzor, Qashqadaryo</span></li></ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Tohir Tarilov. Barcha huquqlar himoyalangan.</p>
+      <button class="back-to-top" id="backToTop" aria-label="Yuqoriga"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg></button>
+    </div>
+  </footer>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JS fayllar -->
+  <script src="js/theme.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>
